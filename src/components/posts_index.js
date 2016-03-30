@@ -4,6 +4,7 @@ import {fetchPosts} from '../actions/index';
 import {Link} from 'react-router';
 
 class PostsIndex extends Component {
+  //do this before hand
   componentWillMount(){
     this.props.fetchPosts();
   }
@@ -11,12 +12,13 @@ class PostsIndex extends Component {
   renderPosts() {
     return this.props.posts.map((post) => {
       return (
-        <li className="list-group-item" key={post.id}>
+        // link tag provided by react router link to individual post
         <Link to={"posts/"+ post.id}>
-          <span className="pull-xs-right">{post.categories}</span>
-          <strong>{post.title}</strong>
+          <li className="list-group-item" key={post.id}>
+            <span className="pull-xs-right">{post.categories}</span>
+            <strong>{post.title}</strong>
+          </li>
         </Link>
-        </li>
       );
     });
   }

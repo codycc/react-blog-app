@@ -1,3 +1,9 @@
 form a {
   margin-left: 5px;
 }
+body {
+  padding-top:30px;
+}
+text-xs-right {
+  float:right;
+}

@@ -24,9 +24,10 @@ class PostsNew extends Component {
     return(
     <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
     <h3>Create A New Post</h3>
-
+    
     <div className={`form-group ${title.touched && title.invalid ? 'has-danger' : ''}`}>
       <label>Title</label>
+
       <input type="text" className="form-control" {...title}/>
       <div className="text-help">
       {title.touched ? title.error : ''}
@@ -56,7 +57,7 @@ class PostsNew extends Component {
   );
   }
 }
-
+// validations for forms
 function validate(values) {
   const errors = {};
 
@@ -74,6 +75,8 @@ function validate(values) {
 }
 // connect: first argument is mapStateToProps, 1ns is mapDispatchToProps
 // reduxForm ; 1st is form config, 2nd is mapStateToProps, 3rd is mapDispatchToProps
+
+// which fields its in charge of
 export default reduxForm({
   form: 'PostsNewForm',
   fields: ['title', 'categories', 'content'],
